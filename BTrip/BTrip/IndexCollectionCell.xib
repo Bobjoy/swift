@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VetripCollectionViewCell" customModule="Vetrip"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VetripCollectionCell" id="gTV-IL-0wX" customClass="IndexCollectionCell" customModule="BTrip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="261" height="111"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="261" height="111"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J96-8V-mgR">
+                        <rect key="frame" x="0.0" y="0.0" width="86" height="111"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flight.png" translatesAutoresizingMaskIntoConstraints="NO" id="C9T-Rc-i65">
+                                <rect key="frame" x="20" y="57" width="46" height="54"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FG3-YG-xk0">
+                                <rect key="frame" x="0.0" y="0.0" width="86" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" button="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="C9T-Rc-i65" secondAttribute="bottom" id="0BV-93-KfM"/>
+                            <constraint firstAttribute="trailing" secondItem="FG3-YG-xk0" secondAttribute="trailing" id="FzB-X7-Lqc"/>
+                            <constraint firstAttribute="trailing" secondItem="C9T-Rc-i65" secondAttribute="trailing" constant="20" id="d1k-es-rqa"/>
+                            <constraint firstItem="FG3-YG-xk0" firstAttribute="leading" secondItem="J96-8V-mgR" secondAttribute="leading" id="fmR-gc-Yft"/>
+                            <constraint firstItem="C9T-Rc-i65" firstAttribute="leading" secondItem="J96-8V-mgR" secondAttribute="leading" constant="20" id="pv8-jD-1jk"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="userInteractionEnabled" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-1k-Uks">
+                        <rect key="frame" x="87" y="56" width="87" height="55"/>
+                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" button="YES" staticText="YES"/>
+                        </accessibility>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="userInteractionEnabled" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaj-pO-m41">
+                        <rect key="frame" x="175" y="56" width="86" height="55"/>
+                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" button="YES" staticText="YES"/>
+                        </accessibility>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="userInteractionEnabled" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kME-2g-Lrh">
+                        <rect key="frame" x="87" y="0.0" width="87" height="55"/>
+                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" button="YES" staticText="YES"/>
+                        </accessibility>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="userInteractionEnabled" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7G-Rt-Kmd">
+                        <rect key="frame" x="175" y="0.0" width="86" height="55"/>
+                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" button="YES" staticText="YES"/>
+                        </accessibility>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="userInteractionEnabled" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="kME-2g-Lrh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="12u-f0-M9B"/>
+                <constraint firstItem="p7G-Rt-Kmd" firstAttribute="leading" secondItem="kME-2g-Lrh" secondAttribute="trailing" constant="1" id="2Sf-D7-J7C"/>
+                <constraint firstItem="p7G-Rt-Kmd" firstAttribute="height" secondItem="eaj-pO-m41" secondAttribute="height" id="3Td-T7-Ral"/>
+                <constraint firstItem="FG3-YG-xk0" firstAttribute="height" secondItem="kME-2g-Lrh" secondAttribute="height" id="3ni-wJ-3Hc"/>
+                <constraint firstItem="p7G-Rt-Kmd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6IK-Lf-YIv"/>
+                <constraint firstAttribute="bottom" secondItem="eaj-pO-m41" secondAttribute="bottom" id="GKB-3G-eGe"/>
+                <constraint firstItem="J96-8V-mgR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KMX-20-Q8g"/>
+                <constraint firstItem="eaj-pO-m41" firstAttribute="top" secondItem="p7G-Rt-Kmd" secondAttribute="bottom" constant="1" id="Nij-yF-DC1"/>
+                <constraint firstItem="J96-8V-mgR" firstAttribute="width" secondItem="kME-2g-Lrh" secondAttribute="width" id="Ssu-OC-U5T"/>
+                <constraint firstAttribute="trailing" secondItem="p7G-Rt-Kmd" secondAttribute="trailing" id="WZJ-si-6np"/>
+                <constraint firstItem="BVy-1k-Uks" firstAttribute="leading" secondItem="J96-8V-mgR" secondAttribute="trailing" constant="1" id="WnS-cR-CbD"/>
+                <constraint firstItem="J96-8V-mgR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="X3T-Ph-RI7"/>
+                <constraint firstItem="eaj-pO-m41" firstAttribute="leading" secondItem="BVy-1k-Uks" secondAttribute="trailing" constant="1" id="Z8d-fo-6Kh"/>
+                <constraint firstItem="p7G-Rt-Kmd" firstAttribute="width" secondItem="kME-2g-Lrh" secondAttribute="width" id="eQj-QJ-DlV"/>
+                <constraint firstAttribute="bottom" secondItem="BVy-1k-Uks" secondAttribute="bottom" id="gm7-Lt-JfA"/>
+                <constraint firstAttribute="trailing" secondItem="eaj-pO-m41" secondAttribute="trailing" id="idP-hB-aq3"/>
+                <constraint firstItem="eaj-pO-m41" firstAttribute="width" secondItem="BVy-1k-Uks" secondAttribute="width" id="kOY-Xt-gIe"/>
+                <constraint firstItem="BVy-1k-Uks" firstAttribute="top" secondItem="kME-2g-Lrh" secondAttribute="bottom" constant="1" id="nOf-dD-ZWz"/>
+                <constraint firstAttribute="bottom" secondItem="J96-8V-mgR" secondAttribute="bottom" id="neG-OU-xnA"/>
+                <constraint firstItem="C9T-Rc-i65" firstAttribute="top" secondItem="BVy-1k-Uks" secondAttribute="top" constant="1" id="rk5-zQ-kCT"/>
+                <constraint firstItem="kME-2g-Lrh" firstAttribute="leading" secondItem="J96-8V-mgR" secondAttribute="trailing" constant="1" id="skS-9k-NEV"/>
+                <constraint firstItem="J96-8V-mgR" firstAttribute="width" secondItem="BVy-1k-Uks" secondAttribute="width" id="szD-2d-Snt"/>
+                <constraint firstItem="BVy-1k-Uks" firstAttribute="height" secondItem="kME-2g-Lrh" secondAttribute="height" id="vjx-mr-Rys"/>
+                <constraint firstItem="FG3-YG-xk0" firstAttribute="top" secondItem="kME-2g-Lrh" secondAttribute="top" id="wHO-8O-yCn"/>
+            </constraints>
+            <size key="customSize" width="261" height="111"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="imageView" destination="C9T-Rc-i65" id="rN3-D3-bQ5"/>
+                <outlet property="label1" destination="FG3-YG-xk0" id="tas-Fq-Fkh"/>
+                <outlet property="label2" destination="kME-2g-Lrh" id="chq-pg-sKN"/>
+                <outlet property="label3" destination="BVy-1k-Uks" id="8D6-iX-0gJ"/>
+                <outlet property="label4" destination="p7G-Rt-Kmd" id="UgT-Zz-kcg"/>
+                <outlet property="label5" destination="eaj-pO-m41" id="dz3-BP-z6X"/>
+                <outlet property="view" destination="J96-8V-mgR" id="iiV-zM-AxM"/>
+            </connections>
+            <point key="canvasLocation" x="440.5" y="376.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="flight.png" width="348" height="294"/>
+    </resources>
+</document>

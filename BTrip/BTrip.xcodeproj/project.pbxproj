@@ -1,0 +1,759 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47F9F4011315E58988AA178C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7A1A01AA508C10A460D343 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F50F33601B29239900AAE557 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50F335F1B29239900AAE557 /* Test.swift */; };
+		F57600D31B26E5E500F9907B /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = F57600D21B26E5E500F9907B /* arrow_right.png */; };
+		F57600D51B270C5300F9907B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57600D41B270C5300F9907B /* BaseView.swift */; };
+		F5AC98391B282A5C00CC72A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC98381B282A5C00CC72A2 /* MapKit.framework */; };
+		F5AC983B1B282A7100CC72A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC983A1B282A7100CC72A2 /* CoreLocation.framework */; };
+		F5AC98401B282ABB00CC72A2 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5AC983F1B282ABB00CC72A2 /* Hotel.storyboard */; };
+		F5C3A32E1B26788E00296966 /* home_life.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C3A32D1B26788E00296966 /* home_life.png */; };
+		F5C3A3301B2678A200296966 /* home_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C3A32F1B2678A200296966 /* home_banner.png */; };
+		F5C3A3321B2678B300296966 /* home_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C3A3311B2678B300296966 /* home_bottom.png */; };
+		F5C3A3351B26BF4400296966 /* FlightSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C3A3331B26BF4400296966 /* FlightSearchCell.swift */; };
+		F5C3A3361B26BF4400296966 /* FlightSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C3A3341B26BF4400296966 /* FlightSearchCell.xib */; };
+		F5CE43791B2045950015104A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43781B2045950015104A /* main.m */; };
+		F5CE437C1B2045950015104A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE437B1B2045950015104A /* AppDelegate.m */; };
+		F5CE43841B2045950015104A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CE43831B2045950015104A /* Images.xcassets */; };
+		F5CE43871B2045950015104A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5CE43851B2045950015104A /* LaunchScreen.xib */; };
+		F5CE43931B2045950015104A /* BTripTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43921B2045950015104A /* BTripTests.m */; };
+		F5CE43A01B2046DA0015104A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE439F1B2046DA0015104A /* MainViewController.swift */; };
+		F5CE43A21B204C030015104A /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43A11B204C030015104A /* IndexViewController.swift */; };
+		F5CE43A41B204C8A0015104A /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43A31B204C8A0015104A /* PlanViewController.swift */; };
+		F5CE43A61B204CE60015104A /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43A51B204CE60015104A /* ServiceViewController.swift */; };
+		F5CE43A81B204CFA0015104A /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43A71B204CFA0015104A /* PersonViewController.swift */; };
+		F5CE43AE1B2050A00015104A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43AA1B2050A00015104A /* Contact.swift */; };
+		F5CE43AF1B2050A00015104A /* NSString+encrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43AC1B2050A00015104A /* NSString+encrypto.m */; };
+		F5CE43B01B2050A00015104A /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43AD1B2050A00015104A /* UIColor+hex.swift */; };
+		F5CE43BA1B2051540015104A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43B31B2051540015104A /* PageViewController.swift */; };
+		F5CE43BB1B2051540015104A /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43B41B2051540015104A /* PageContentViewController.swift */; };
+		F5CE43BC1B2051540015104A /* IndexCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43B51B2051540015104A /* IndexCollectionCell.swift */; };
+		F5CE43BD1B2051540015104A /* IndexCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5CE43B61B2051540015104A /* IndexCollectionCell.xib */; };
+		F5CE43C91B2065EC0015104A /* IndexTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE43C71B2065EC0015104A /* IndexTableCell.swift */; };
+		F5CE43CA1B2065EC0015104A /* IndexTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5CE43C81B2065EC0015104A /* IndexTableCell.xib */; };
+		F5D7FFB11B21590500AD8E4E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FFB01B21590500AD8E4E /* BaseViewController.swift */; };
+		F5D7FFB31B218B6000AD8E4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FFB21B218B6000AD8E4E /* LoginViewController.swift */; };
+		F5D7FFB81B21906D00AD8E4E /* Person.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D7FFB71B21906D00AD8E4E /* Person.storyboard */; };
+		F5DA54E71B282DEB007E5201 /* HotelSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DA54E61B282DEB007E5201 /* HotelSearchController.swift */; };
+		F5E7E9E01B2531EC00A9F442 /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9DC1B2531EC00A9F442 /* flight.png */; };
+		F5E7E9E11B2531EC00A9F442 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9DD1B2531EC00A9F442 /* hotel.png */; };
+		F5E7E9E21B2531EC00A9F442 /* local.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9DE1B2531EC00A9F442 /* local.png */; };
+		F5E7E9E31B2531EC00A9F442 /* travel.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9DF1B2531EC00A9F442 /* travel.png */; };
+		F5E7E9E51B2533D800A9F442 /* home_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9E41B2533D800A9F442 /* home_bg.png */; };
+		F5E7E9E71B2533F000A9F442 /* voice.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9E61B2533F000A9F442 /* voice.png */; };
+		F5E7E9E91B25340800A9F442 /* switch.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9E81B25340800A9F442 /* switch.png */; };
+		F5E7E9EB1B2547D000A9F442 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9EA1B2547D000A9F442 /* Podfile */; };
+		F5E7E9ED1B25516300A9F442 /* BSOAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7E9EC1B25516300A9F442 /* BSOAPHelper.swift */; };
+		F5E7E9EF1B25635700A9F442 /* BXMLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7E9EE1B25635700A9F442 /* BXMLHelper.swift */; };
+		F5E7E9F11B25636600A9F442 /* BJSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7E9F01B25636600A9F442 /* BJSONHelper.swift */; };
+		F5E7E9FD1B257C9E00A9F442 /* FlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7E9FC1B257C9E00A9F442 /* FlightSearchController.swift */; };
+		F5E7E9FF1B257CB500A9F442 /* Flight.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E7E9FE1B257CB500A9F442 /* Flight.storyboard */; };
+		F5E7EA021B259A9100A9F442 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7EA011B259A9100A9F442 /* User.swift */; };
+		F5E7EA041B259CE600A9F442 /* BTripDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F5E7EA031B259CE600A9F442 /* BTripDB.sqlite */; };
+		F5E7EA061B259DCA00A9F442 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E7EA051B259DCA00A9F442 /* libsqlite3.dylib */; };
+		F5E7EA081B259E5C00A9F442 /* BDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7EA071B259E5C00A9F442 /* BDBHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5CE438D1B2045950015104A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5CE436B1B2045950015104A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5CE43721B2045950015104A;
+			remoteInfo = BTrip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		39B951E897A089214E809405 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9A7A1A01AA508C10A460D343 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50F335F1B29239900AAE557 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		F57600D21B26E5E500F9907B /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
+		F57600D41B270C5300F9907B /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F5AC98381B282A5C00CC72A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F5AC983A1B282A7100CC72A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F5AC983F1B282ABB00CC72A2 /* Hotel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hotel.storyboard; sourceTree = "<group>"; };
+		F5C3A32D1B26788E00296966 /* home_life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_life.png; sourceTree = "<group>"; };
+		F5C3A32F1B2678A200296966 /* home_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_banner.png; sourceTree = "<group>"; };
+		F5C3A3311B2678B300296966 /* home_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_bottom.png; sourceTree = "<group>"; };
+		F5C3A3331B26BF4400296966 /* FlightSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchCell.swift; sourceTree = "<group>"; };
+		F5C3A3341B26BF4400296966 /* FlightSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightSearchCell.xib; sourceTree = "<group>"; };
+		F5CE43731B2045950015104A /* BTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5CE43771B2045950015104A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5CE43781B2045950015104A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5CE437A1B2045950015104A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F5CE437B1B2045950015104A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F5CE43831B2045950015104A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F5CE43861B2045950015104A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F5CE438C1B2045950015104A /* BTripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5CE43911B2045950015104A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5CE43921B2045950015104A /* BTripTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTripTests.m; sourceTree = "<group>"; };
+		F5CE439C1B2046360015104A /* BTrip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BTrip-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5CE439F1B2046DA0015104A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F5CE43A11B204C030015104A /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		F5CE43A31B204C8A0015104A /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		F5CE43A51B204CE60015104A /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
+		F5CE43A71B204CFA0015104A /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		F5CE43AA1B2050A00015104A /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		F5CE43AB1B2050A00015104A /* NSString+encrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+encrypto.h"; sourceTree = "<group>"; };
+		F5CE43AC1B2050A00015104A /* NSString+encrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+encrypto.m"; sourceTree = "<group>"; };
+		F5CE43AD1B2050A00015104A /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		F5CE43B31B2051540015104A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		F5CE43B41B2051540015104A /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		F5CE43B51B2051540015104A /* IndexCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexCollectionCell.swift; sourceTree = "<group>"; };
+		F5CE43B61B2051540015104A /* IndexCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexCollectionCell.xib; sourceTree = "<group>"; };
+		F5CE43C71B2065EC0015104A /* IndexTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableCell.swift; sourceTree = "<group>"; };
+		F5CE43C81B2065EC0015104A /* IndexTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexTableCell.xib; sourceTree = "<group>"; };
+		F5D7FFB01B21590500AD8E4E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F5D7FFB21B218B6000AD8E4E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F5D7FFB71B21906D00AD8E4E /* Person.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Person.storyboard; sourceTree = "<group>"; };
+		F5DA54E61B282DEB007E5201 /* HotelSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchController.swift; sourceTree = "<group>"; };
+		F5E7E9DC1B2531EC00A9F442 /* flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flight.png; sourceTree = "<group>"; };
+		F5E7E9DD1B2531EC00A9F442 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel.png; sourceTree = "<group>"; };
+		F5E7E9DE1B2531EC00A9F442 /* local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = local.png; sourceTree = "<group>"; };
+		F5E7E9DF1B2531EC00A9F442 /* travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travel.png; sourceTree = "<group>"; };
+		F5E7E9E41B2533D800A9F442 /* home_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_bg.png; sourceTree = "<group>"; };
+		F5E7E9E61B2533F000A9F442 /* voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice.png; sourceTree = "<group>"; };
+		F5E7E9E81B25340800A9F442 /* switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch.png; sourceTree = "<group>"; };
+		F5E7E9EA1B2547D000A9F442 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F5E7E9EC1B25516300A9F442 /* BSOAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSOAPHelper.swift; sourceTree = "<group>"; };
+		F5E7E9EE1B25635700A9F442 /* BXMLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXMLHelper.swift; sourceTree = "<group>"; };
+		F5E7E9F01B25636600A9F442 /* BJSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJSONHelper.swift; sourceTree = "<group>"; };
+		F5E7E9FC1B257C9E00A9F442 /* FlightSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchController.swift; sourceTree = "<group>"; };
+		F5E7E9FE1B257CB500A9F442 /* Flight.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flight.storyboard; sourceTree = "<group>"; };
+		F5E7EA011B259A9100A9F442 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F5E7EA031B259CE600A9F442 /* BTripDB.sqlite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = BTripDB.sqlite; sourceTree = "<group>"; };
+		F5E7EA051B259DCA00A9F442 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F5E7EA071B259E5C00A9F442 /* BDBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDBHelper.swift; sourceTree = "<group>"; };
+		FC16AF15F7CE82805134E0BB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5CE43701B2045950015104A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AC983B1B282A7100CC72A2 /* CoreLocation.framework in Frameworks */,
+				F5AC98391B282A5C00CC72A2 /* MapKit.framework in Frameworks */,
+				F5E7EA061B259DCA00A9F442 /* libsqlite3.dylib in Frameworks */,
+				47F9F4011315E58988AA178C /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5CE43891B2045950015104A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		690C62DF98C6D3F5467E8F5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC16AF15F7CE82805134E0BB /* Pods.debug.xcconfig */,
+				39B951E897A089214E809405 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ACB0B4623F0EA040E6900FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5AC983A1B282A7100CC72A2 /* CoreLocation.framework */,
+				F5AC98381B282A5C00CC72A2 /* MapKit.framework */,
+				F5E7EA051B259DCA00A9F442 /* libsqlite3.dylib */,
+				9A7A1A01AA508C10A460D343 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F50F335E1B29238800AAE557 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				F50F335F1B29239900AAE557 /* Test.swift */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		F5AC983C1B282A8500CC72A2 /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				F5AC983F1B282ABB00CC72A2 /* Hotel.storyboard */,
+				F5DA54E61B282DEB007E5201 /* HotelSearchController.swift */,
+			);
+			name = Hotel;
+			sourceTree = "<group>";
+		};
+		F5CE436A1B2045950015104A = {
+			isa = PBXGroup;
+			children = (
+				F5E7E9EA1B2547D000A9F442 /* Podfile */,
+				F5CE43751B2045950015104A /* BTrip */,
+				F5CE438F1B2045950015104A /* BTripTests */,
+				F5CE43741B2045950015104A /* Products */,
+				690C62DF98C6D3F5467E8F5A /* Pods */,
+				ACB0B4623F0EA040E6900FC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F5CE43741B2045950015104A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE43731B2045950015104A /* BTrip.app */,
+				F5CE438C1B2045950015104A /* BTripTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5CE43751B2045950015104A /* BTrip */ = {
+			isa = PBXGroup;
+			children = (
+				F50F335E1B29238800AAE557 /* Test */,
+				F5E7EA001B25817D00A9F442 /* Model */,
+				F5E7E9CD1B25313500A9F442 /* Images */,
+				F5CE43B21B20513F0015104A /* Custom Views */,
+				F5CE43B11B2050A60015104A /* Helper */,
+				F5CE437A1B2045950015104A /* AppDelegate.h */,
+				F5CE437B1B2045950015104A /* AppDelegate.m */,
+				F5CE439F1B2046DA0015104A /* MainViewController.swift */,
+				F5CE43A11B204C030015104A /* IndexViewController.swift */,
+				F5CE43A31B204C8A0015104A /* PlanViewController.swift */,
+				F5CE43A51B204CE60015104A /* ServiceViewController.swift */,
+				F5CE43A71B204CFA0015104A /* PersonViewController.swift */,
+				F5AC983C1B282A8500CC72A2 /* Hotel */,
+				F5E7E9FB1B257C6500A9F442 /* Flight */,
+				F5D7FFB41B218B7E00AD8E4E /* Person */,
+				F5CE43831B2045950015104A /* Images.xcassets */,
+				F5CE43761B2045950015104A /* Supporting Files */,
+			);
+			path = BTrip;
+			sourceTree = "<group>";
+		};
+		F5CE43761B2045950015104A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE43851B2045950015104A /* LaunchScreen.xib */,
+				F5CE439C1B2046360015104A /* BTrip-Bridging-Header.h */,
+				F5CE43771B2045950015104A /* Info.plist */,
+				F5CE43781B2045950015104A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5CE438F1B2045950015104A /* BTripTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE43921B2045950015104A /* BTripTests.m */,
+				F5CE43901B2045950015104A /* Supporting Files */,
+			);
+			path = BTripTests;
+			sourceTree = "<group>";
+		};
+		F5CE43901B2045950015104A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE43911B2045950015104A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5CE43B11B2050A60015104A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE43AA1B2050A00015104A /* Contact.swift */,
+				F5CE43AB1B2050A00015104A /* NSString+encrypto.h */,
+				F5CE43AC1B2050A00015104A /* NSString+encrypto.m */,
+				F5CE43AD1B2050A00015104A /* UIColor+hex.swift */,
+				F5E7E9EC1B25516300A9F442 /* BSOAPHelper.swift */,
+				F5E7E9F01B25636600A9F442 /* BJSONHelper.swift */,
+				F5E7E9EE1B25635700A9F442 /* BXMLHelper.swift */,
+				F5E7EA071B259E5C00A9F442 /* BDBHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		F5CE43B21B20513F0015104A /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F57600D41B270C5300F9907B /* BaseView.swift */,
+				F5D7FFB01B21590500AD8E4E /* BaseViewController.swift */,
+				F5CE43B31B2051540015104A /* PageViewController.swift */,
+				F5CE43B41B2051540015104A /* PageContentViewController.swift */,
+				F5CE43B51B2051540015104A /* IndexCollectionCell.swift */,
+				F5CE43B61B2051540015104A /* IndexCollectionCell.xib */,
+				F5CE43C71B2065EC0015104A /* IndexTableCell.swift */,
+				F5CE43C81B2065EC0015104A /* IndexTableCell.xib */,
+				F5C3A3331B26BF4400296966 /* FlightSearchCell.swift */,
+				F5C3A3341B26BF4400296966 /* FlightSearchCell.xib */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F5D7FFB41B218B7E00AD8E4E /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				F5D7FFB71B21906D00AD8E4E /* Person.storyboard */,
+				F5D7FFB21B218B6000AD8E4E /* LoginViewController.swift */,
+			);
+			name = Person;
+			sourceTree = "<group>";
+		};
+		F5E7E9CD1B25313500A9F442 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F57600D21B26E5E500F9907B /* arrow_right.png */,
+				F5E7E9E61B2533F000A9F442 /* voice.png */,
+				F5E7E9DC1B2531EC00A9F442 /* flight.png */,
+				F5E7E9DD1B2531EC00A9F442 /* hotel.png */,
+				F5E7E9DE1B2531EC00A9F442 /* local.png */,
+				F5E7E9DF1B2531EC00A9F442 /* travel.png */,
+				F5E7E9E81B25340800A9F442 /* switch.png */,
+				F5E7E9E41B2533D800A9F442 /* home_bg.png */,
+				F5C3A32F1B2678A200296966 /* home_banner.png */,
+				F5C3A32D1B26788E00296966 /* home_life.png */,
+				F5C3A3311B2678B300296966 /* home_bottom.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F5E7E9FB1B257C6500A9F442 /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				F5E7E9FE1B257CB500A9F442 /* Flight.storyboard */,
+				F5E7E9FC1B257C9E00A9F442 /* FlightSearchController.swift */,
+			);
+			name = Flight;
+			sourceTree = "<group>";
+		};
+		F5E7EA001B25817D00A9F442 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5E7EA031B259CE600A9F442 /* BTripDB.sqlite */,
+				F5E7EA011B259A9100A9F442 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5CE43721B2045950015104A /* BTrip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5CE43961B2045950015104A /* Build configuration list for PBXNativeTarget "BTrip" */;
+			buildPhases = (
+				323CC3FE42964FB1E008AA54 /* Check Pods Manifest.lock */,
+				F5CE436F1B2045950015104A /* Sources */,
+				F5CE43701B2045950015104A /* Frameworks */,
+				F5CE43711B2045950015104A /* Resources */,
+				B2547A9F8F17CA62BD5BA606 /* Embed Pods Frameworks */,
+				BEBE1A8D49DD6FBEB38F22A4 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BTrip;
+			productName = BTrip;
+			productReference = F5CE43731B2045950015104A /* BTrip.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5CE438B1B2045950015104A /* BTripTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5CE43991B2045950015104A /* Build configuration list for PBXNativeTarget "BTripTests" */;
+			buildPhases = (
+				F5CE43881B2045950015104A /* Sources */,
+				F5CE43891B2045950015104A /* Frameworks */,
+				F5CE438A1B2045950015104A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5CE438E1B2045950015104A /* PBXTargetDependency */,
+			);
+			name = BTripTests;
+			productName = BTripTests;
+			productReference = F5CE438C1B2045950015104A /* BTripTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5CE436B1B2045950015104A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = BFL;
+				TargetAttributes = {
+					F5CE43721B2045950015104A = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					F5CE438B1B2045950015104A = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = F5CE43721B2045950015104A;
+					};
+				};
+			};
+			buildConfigurationList = F5CE436E1B2045950015104A /* Build configuration list for PBXProject "BTrip" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5CE436A1B2045950015104A;
+			productRefGroup = F5CE43741B2045950015104A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5CE43721B2045950015104A /* BTrip */,
+				F5CE438B1B2045950015104A /* BTripTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5CE43711B2045950015104A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5CE43CA1B2065EC0015104A /* IndexTableCell.xib in Resources */,
+				F57600D31B26E5E500F9907B /* arrow_right.png in Resources */,
+				F5E7E9E51B2533D800A9F442 /* home_bg.png in Resources */,
+				F5E7E9E01B2531EC00A9F442 /* flight.png in Resources */,
+				F5C3A3361B26BF4400296966 /* FlightSearchCell.xib in Resources */,
+				F5C3A3321B2678B300296966 /* home_bottom.png in Resources */,
+				F5CE43BD1B2051540015104A /* IndexCollectionCell.xib in Resources */,
+				F5E7E9E91B25340800A9F442 /* switch.png in Resources */,
+				F5E7E9E11B2531EC00A9F442 /* hotel.png in Resources */,
+				F5C3A3301B2678A200296966 /* home_banner.png in Resources */,
+				F5E7E9E71B2533F000A9F442 /* voice.png in Resources */,
+				F5CE43871B2045950015104A /* LaunchScreen.xib in Resources */,
+				F5C3A32E1B26788E00296966 /* home_life.png in Resources */,
+				F5E7E9FF1B257CB500A9F442 /* Flight.storyboard in Resources */,
+				F5AC98401B282ABB00CC72A2 /* Hotel.storyboard in Resources */,
+				F5CE43841B2045950015104A /* Images.xcassets in Resources */,
+				F5E7EA041B259CE600A9F442 /* BTripDB.sqlite in Resources */,
+				F5E7E9EB1B2547D000A9F442 /* Podfile in Resources */,
+				F5E7E9E31B2531EC00A9F442 /* travel.png in Resources */,
+				F5D7FFB81B21906D00AD8E4E /* Person.storyboard in Resources */,
+				F5E7E9E21B2531EC00A9F442 /* local.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5CE438A1B2045950015104A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		323CC3FE42964FB1E008AA54 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B2547A9F8F17CA62BD5BA606 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEBE1A8D49DD6FBEB38F22A4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5CE436F1B2045950015104A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5CE43A41B204C8A0015104A /* PlanViewController.swift in Sources */,
+				F5CE43A01B2046DA0015104A /* MainViewController.swift in Sources */,
+				F5CE43BA1B2051540015104A /* PageViewController.swift in Sources */,
+				F5CE43BC1B2051540015104A /* IndexCollectionCell.swift in Sources */,
+				F5CE43AF1B2050A00015104A /* NSString+encrypto.m in Sources */,
+				F5D7FFB11B21590500AD8E4E /* BaseViewController.swift in Sources */,
+				F5E7E9FD1B257C9E00A9F442 /* FlightSearchController.swift in Sources */,
+				F5E7E9F11B25636600A9F442 /* BJSONHelper.swift in Sources */,
+				F5CE43A61B204CE60015104A /* ServiceViewController.swift in Sources */,
+				F5CE437C1B2045950015104A /* AppDelegate.m in Sources */,
+				F5E7EA021B259A9100A9F442 /* User.swift in Sources */,
+				F5CE43AE1B2050A00015104A /* Contact.swift in Sources */,
+				F57600D51B270C5300F9907B /* BaseView.swift in Sources */,
+				F5E7E9ED1B25516300A9F442 /* BSOAPHelper.swift in Sources */,
+				F5CE43791B2045950015104A /* main.m in Sources */,
+				F5E7EA081B259E5C00A9F442 /* BDBHelper.swift in Sources */,
+				F5CE43B01B2050A00015104A /* UIColor+hex.swift in Sources */,
+				F5DA54E71B282DEB007E5201 /* HotelSearchController.swift in Sources */,
+				F5CE43BB1B2051540015104A /* PageContentViewController.swift in Sources */,
+				F50F33601B29239900AAE557 /* Test.swift in Sources */,
+				F5E7E9EF1B25635700A9F442 /* BXMLHelper.swift in Sources */,
+				F5D7FFB31B218B6000AD8E4E /* LoginViewController.swift in Sources */,
+				F5CE43A21B204C030015104A /* IndexViewController.swift in Sources */,
+				F5C3A3351B26BF4400296966 /* FlightSearchCell.swift in Sources */,
+				F5CE43A81B204CFA0015104A /* PersonViewController.swift in Sources */,
+				F5CE43C91B2065EC0015104A /* IndexTableCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5CE43881B2045950015104A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5CE43931B2045950015104A /* BTripTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5CE438E1B2045950015104A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5CE43721B2045950015104A /* BTrip */;
+			targetProxy = F5CE438D1B2045950015104A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5CE43851B2045950015104A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5CE43861B2045950015104A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5CE43941B2045950015104A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F5CE43951B2045950015104A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5CE43971B2045950015104A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC16AF15F7CE82805134E0BB /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				INFOPLIST_FILE = BTrip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BTrip/BTrip-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F5CE43981B2045950015104A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39B951E897A089214E809405 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				INFOPLIST_FILE = BTrip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BTrip/BTrip-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F5CE439A1B2045950015104A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BTripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTrip.app/BTrip";
+			};
+			name = Debug;
+		};
+		F5CE439B1B2045950015104A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BTripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTrip.app/BTrip";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5CE436E1B2045950015104A /* Build configuration list for PBXProject "BTrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5CE43941B2045950015104A /* Debug */,
+				F5CE43951B2045950015104A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5CE43961B2045950015104A /* Build configuration list for PBXNativeTarget "BTrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5CE43971B2045950015104A /* Debug */,
+				F5CE43981B2045950015104A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5CE43991B2045950015104A /* Build configuration list for PBXNativeTarget "BTripTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5CE439A1B2045950015104A /* Debug */,
+				F5CE439B1B2045950015104A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5CE436B1B2045950015104A /* Project object */;
+}
