@@ -10,14 +10,14 @@
 	<string>BTrip</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EEEF07649082B59FAA0AC6007FF79481A719F716</key>
+		<key>3F2927B8A2D50E3CA017993A5F1C5AF935ED1D68</key>
 		<string>github.com:Bobjoy/swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BTrip/BTrip.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EEEF07649082B59FAA0AC6007FF79481A719F716</key>
+		<key>3F2927B8A2D50E3CA017993A5F1C5AF935ED1D68</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EEEF07649082B59FAA0AC6007FF79481A719F716</string>
+	<string>3F2927B8A2D50E3CA017993A5F1C5AF935ED1D68</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EEEF07649082B59FAA0AC6007FF79481A719F716</string>
+			<string>3F2927B8A2D50E3CA017993A5F1C5AF935ED1D68</string>
 			<key>IDESourceControlWCCName</key>
 			<string>study</string>
 		</dict>
