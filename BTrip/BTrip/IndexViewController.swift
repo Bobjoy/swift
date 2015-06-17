@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class IndexViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, IndexTableCellDelegate {
+class IndexViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, IndexTableCellDelegate{
     
     var mSearchView: UIView!
     //var mScrollView: UIView!
@@ -36,6 +36,9 @@ class IndexViewController: BaseViewController, UITableViewDataSource, UITableVie
         setupTableView()
         // 布局视图
         layoutViews()
+        
+        //SwifterTips.testGCD()
+        //SwifterTips.testUnsafe()
     }
     
     // #pragma MASK - UITableView
@@ -133,4 +136,5 @@ class IndexViewController: BaseViewController, UITableViewDataSource, UITableVie
             
         }
     }
+    
 }

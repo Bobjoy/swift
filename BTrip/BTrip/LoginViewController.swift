@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UITableViewController, BSOAPHelperDelegate {
+class LoginViewController: UITableViewController, BSOAPHelperDelegate, IFlySpeechRecognizerDelegate {
 
     @IBOutlet var mTableView: UITableView!
     
@@ -16,6 +16,13 @@ class LoginViewController: UITableViewController, BSOAPHelperDelegate {
     let notiName = "login"
     
     var mLoading: UIActivityIndicatorView?
+    
+    var mIFlySpeechRecognizer: IFlySpeechRecognizer!
+    var content: UITextField!
+    var mPopView: PopupView!
+    
+    var isCanceled: Bool = true
+    var mResult = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +33,11 @@ class LoginViewController: UITableViewController, BSOAPHelperDelegate {
         
         setupTableView()
         
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.initRecoginer()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -100,6 +112,9 @@ class LoginViewController: UITableViewController, BSOAPHelperDelegate {
     }
     
     func login() {
+        
+        self.startSpeech()
+        return
         var nameView = mTableView.viewWithTag(111)
         var passView = mTableView.viewWithTag(112)
         if let nameField = nameView, passField = passView {
@@ -159,5 +174,116 @@ class LoginViewController: UITableViewController, BSOAPHelperDelegate {
         var userDefault: NSUserDefaults = NSUserDefaults(suiteName: "vemember")!
         
     }
-
+    
+    func startSpeech() {
+        var nameView = mTableView.viewWithTag(111) as! UITextField
+        let posY = nameView.frame.origin.y + nameView.frame.size.height/6;
+        mPopView = PopupView(frame:CGRectMake(100, posY, 0, 0), view:self.view);
+       
+        self.isCanceled = false
+        if mIFlySpeechRecognizer == NSNull() {
+            self.initRecoginer()
+        }
+        //设置音频来源为麦克风
+        mIFlySpeechRecognizer.setParameter(IFLY_AUDIO_SOURCE_MIC, forKey: "audio_source")
+        //设置听写结果格式为json
+        mIFlySpeechRecognizer.setParameter("json", forKey: IFlySpeechConstant.RESULT_TYPE())
+        //保存录音文件，保存在sdk工作路径中，如未设置工作路径，则默认保存在library/cache下
+        mIFlySpeechRecognizer.setParameter("asr.pcm", forKey: IFlySpeechConstant.ASR_AUDIO_PATH())
+        mIFlySpeechRecognizer.delegate = self
+        
+        var ret = mIFlySpeechRecognizer.startListening()
+        if ret == false {
+            println("启动识别服务失败，请稍后重试")
+            mPopView.showText("启动识别服务失败，请稍后重试")
+        }
+    }
+    
+    func initRecoginer() {
+        mIFlySpeechRecognizer = IFlySpeechRecognizer.sharedInstance() as! IFlySpeechRecognizer
+        mIFlySpeechRecognizer.setParameter("", forKey: IFlySpeechConstant.PARAMS())
+        //设置听写模式
+        mIFlySpeechRecognizer.setParameter("iat", forKey: IFlySpeechConstant.IFLY_DOMAIN())
+        mIFlySpeechRecognizer.delegate = self
+    }
+    
+    //MARK - IFlySpeechRecognizerDelegate
+    
+    /**
+    音量回调函数
+    :param: volume 0-30
+    */
+    func onVolumeChanged(volume: Int32) {
+        if self.isCanceled {
+            mPopView.removeFromSuperview()
+            return
+        }
+        
+        var vol = "音量\(volume)"
+        mPopView.showText(vol)
+        
+    }
+    
+    /**
+    开始识别回调函数
+    */
+    func onBeginOfSpeech() {
+        println(">>>>>>>>>>>>>>正在录音")
+        mPopView.showText("正在录音")
+    }
+    
+    /**
+    停止录音回调函数
+    */
+    func onEndOfSpeech() {
+        println(">>>>>>>>>>>>>>停止录音")
+        mPopView.showText("停止录音")
+    }
+    
+    /**
+    听写结束回调函数（注：无论听写是否正确都会回调）
+    :param: errorCode : 0听写正确，other听写错误
+    */
+    func onError(errorCode: IFlySpeechError!) {
+        //println("\(__FUNCTION__)")
+        
+        var text = ""
+        if self.isCanceled {
+            text = "识别取消"
+        } else if errorCode.errorCode() == 0 {
+            if count(mResult) == 0 {
+                text = "无识别结果"
+            } else {
+                text = "识别成功"
+            }
+        } else {
+            text = ">>>>>>>>>>>>>>发生错误：\(errorCode.errorCode()) \(errorCode.errorDesc())"
+            println(text)
+        }
+        mPopView.showText(text)
+    }
+    
+    /**
+    听写结果回调
+    :param: results 听写结果
+    :param: isLast  表示最后一次
+    */
+    func onResults(results: [AnyObject]!, isLast: Bool) {
+        var resultString: NSMutableString = ""
+        if results != nil {
+            var dict = results[0] as! NSDictionary
+            for (key,_) in dict {
+                resultString.appendString("\(key)")
+            }
+            var nameView = mTableView.viewWithTag(111) as! UITextField
+            mResult = "\(nameView.text)\(resultString)"
+        
+            var resultFromJson = ISRDataHelper.stringFromJson(resultString)
+            nameView.text = "\(resultFromJson!)"
+        
+            if isLast {
+                println("听写结果(json)：\(mResult)测试")
+            }
+        }
+    }
 }

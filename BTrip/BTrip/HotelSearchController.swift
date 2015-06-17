@@ -40,18 +40,11 @@ class HotelSearchController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var currLocation = locations.last as! CLLocation
+        currLocation = locations.last as! CLLocation
         var coordinate = currLocation.coordinate
         jd.text = "\(coordinate.longitude)"
         wd.text = "\(coordinate.latitude)"
         gd.text = "\(currLocation.altitude)"
-        
-        var geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(currLocation, completionHandler: { (placemarks, error) -> Void in
-            for place in placemarks {
-                println(place)
-            }
-        })
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -78,7 +71,8 @@ class HotelSearchController: UIViewController, CLLocationManagerDelegate {
     @IBAction func locate(sender: AnyObject) {
         var geocoder = CLGeocoder()
         var p: CLPlacemark?
-        geocoder.reverseGeocodeLocation(currLocation, completionHandler: { (placemarks, error) -> Void in
+        
+        geocoder.reverseGeocodeLocation(locationManager.location, completionHandler: { (placemarks, error) -> Void in
            var array = NSArray(object: "zh-hans")
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "AppleLanguages")
             if error != nil {

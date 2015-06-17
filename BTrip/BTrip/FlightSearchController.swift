@@ -16,7 +16,7 @@ class FlightSearchController: BaseViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-dlog(message: "This is a test")
+        
         // Do any additional setup after loading the view.
         self.title = "机票查询"
         self.hideNav = false
