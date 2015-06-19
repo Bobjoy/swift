@@ -58,7 +58,6 @@ class ChatViewController: BaseViewController, BMessageDelegate {
         var time = dict.objectForKey("time") as! String
         
         var size = StringUtils.stringSize(message, size: textSize, fontSize: 13)
-        println(size)
         size.width += (padding)/2
         
         cell.messageContentView.text = message as! String
@@ -70,7 +69,7 @@ class ChatViewController: BaseViewController, BMessageDelegate {
         if sender.isEqualToString("you") {
             // 背景图片
             bgImage = UIImage(named: "BlueBubble2.png")?.stretchableImageWithLeftCapWidth(20, topCapHeight: 15)
-            cell.messageContentView.frame = CGRectMake(padding, padding*2, size.width, size.height)
+            cell.messageContentView.frame = CGRectMake(padding, padding, size.width, size.height)
             cell.bgImageView.frame = CGRectMake(cell.messageContentView.frame.origin.x - padding/2, cell.messageContentView.frame.origin.y - padding/2, size.width + padding, size.height + padding)
         } else {
             bgImage = UIImage(named: "GreenBubble2.png")?.stretchableImageWithLeftCapWidth(14, topCapHeight: 15)
@@ -89,7 +88,6 @@ class ChatViewController: BaseViewController, BMessageDelegate {
         var msg = dict.objectForKey("msg") as! NSString
         var size = StringUtils.stringSize(msg, size: textSize, fontSize: 13)
         size.height += padding*2
-        println(size)
         var height = size.height < 65 ? 65 : size.height
         return height
     }
