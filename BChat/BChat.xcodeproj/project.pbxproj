@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5014BB81B390B4E004F5262 /* BStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5014BB71B390B4E004F5262 /* BStateDelegate.swift */; };
+		F5014BBD1B390F4E004F5262 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5014BBC1B390F4E004F5262 /* Constant.swift */; };
+		F5014BBF1B3915F2004F5262 /* BJabberMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5014BBE1B3915F2004F5262 /* BJabberMessage.swift */; };
 		F52132631B329C260085A4FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52132621B329C260085A4FA /* LoginViewController.swift */; };
 		F52132651B32A6140085A4FA /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52132641B32A6140085A4FA /* DateUtils.swift */; };
 		F52132671B32A7E50085A4FA /* BMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52132661B32A7E50085A4FA /* BMessageDelegate.swift */; };
@@ -166,13 +169,29 @@
 		F53DC24D1B315AC500800300 /* XMPPMessage+XEP_0308.m in Sources */ = {isa = PBXBuildFile; fileRef = F53DC1E61B315AC500800300 /* XMPPMessage+XEP_0308.m */; };
 		F53DC24E1B315AC500800300 /* XMPPMessage+XEP_0333.m in Sources */ = {isa = PBXBuildFile; fileRef = F53DC1E91B315AC500800300 /* XMPPMessage+XEP_0333.m */; };
 		F53DC24F1B315AC500800300 /* NSXMLElement+XEP_0335.m in Sources */ = {isa = PBXBuildFile; fileRef = F53DC1EC1B315AC500800300 /* NSXMLElement+XEP_0335.m */; };
+		F5D1EAAB1B3BA3620043EC18 /* MessageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1EAAA1B3BA3620043EC18 /* MessageTableCell.swift */; };
+		F5D1EAAD1B3BA9610043EC18 /* MessageTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAAC1B3BA9610043EC18 /* MessageTableCell.xib */; };
+		F5D1EABA1B3BAC310043EC18 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAB51B3BAC310043EC18 /* photo.png */; };
+		F5D1EABB1B3BAC310043EC18 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAB61B3BAC310043EC18 /* photo@2x.png */; };
+		F5D1EABC1B3BAC310043EC18 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAB71B3BAC310043EC18 /* photo1.png */; };
+		F5D1EABD1B3BAC310043EC18 /* photo1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAB81B3BAC310043EC18 /* photo1@2x.png */; };
+		F5D1EABE1B3BAC310043EC18 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAB91B3BAC310043EC18 /* image.png */; };
+		F5D1EAC51B3BAC530043EC18 /* SenderAppNodeBkg_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EABF1B3BAC530043EC18 /* SenderAppNodeBkg_HL.png */; };
+		F5D1EAC61B3BAC530043EC18 /* SenderAppNodeBkg_HL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAC01B3BAC530043EC18 /* SenderAppNodeBkg_HL@2x.png */; };
+		F5D1EAC71B3BAC530043EC18 /* SenderVoiceNodeDownloading.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAC11B3BAC530043EC18 /* SenderVoiceNodeDownloading.png */; };
+		F5D1EAC81B3BAC530043EC18 /* SenderVoiceNodeDownloading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAC21B3BAC530043EC18 /* SenderVoiceNodeDownloading@2x.png */; };
+		F5D1EAC91B3BAC530043EC18 /* SenderVoiceNodePlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAC31B3BAC530043EC18 /* SenderVoiceNodePlaying.png */; };
+		F5D1EACA1B3BAC530043EC18 /* SenderVoiceNodePlaying@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAC41B3BAC530043EC18 /* SenderVoiceNodePlaying@2x.png */; };
+		F5D1EAD11B3BAC670043EC18 /* ReceiverTextNodeBkg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EACB1B3BAC670043EC18 /* ReceiverTextNodeBkg.png */; };
+		F5D1EAD21B3BAC670043EC18 /* ReceiverTextNodeBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EACC1B3BAC670043EC18 /* ReceiverTextNodeBkg@2x.png */; };
+		F5D1EAD31B3BAC670043EC18 /* ReceiverVoiceNodeDownloading.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EACD1B3BAC670043EC18 /* ReceiverVoiceNodeDownloading.png */; };
+		F5D1EAD41B3BAC670043EC18 /* ReceiverVoiceNodeDownloading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EACE1B3BAC670043EC18 /* ReceiverVoiceNodeDownloading@2x.png */; };
+		F5D1EAD51B3BAC670043EC18 /* ReceiverVoiceNodePlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EACF1B3BAC670043EC18 /* ReceiverVoiceNodePlaying.png */; };
+		F5D1EAD61B3BAC670043EC18 /* ReceiverVoiceNodePlaying@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D1EAD01B3BAC670043EC18 /* ReceiverVoiceNodePlaying@2x.png */; };
+		F5D1EAD81B3BDCC40043EC18 /* BViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1EAD71B3BDCC40043EC18 /* BViewHelper.swift */; };
 		F5E9742B1B33C07D00829C60 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9742A1B33C07D00829C60 /* BaseViewController.swift */; };
 		F5E9742D1B33C08F00829C60 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9742C1B33C08F00829C60 /* MessageTableViewCell.swift */; };
 		F5E9742F1B33DAF300829C60 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9742E1B33DAF300829C60 /* StringUtils.swift */; };
-		F5E974351B33DF0A00829C60 /* BlueBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E974311B33DF0A00829C60 /* BlueBubble2.png */; };
-		F5E974361B33DF0A00829C60 /* GreenBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E974321B33DF0A00829C60 /* GreenBubble2.png */; };
-		F5E974371B33DF0A00829C60 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E974331B33DF0A00829C60 /* aqua.png */; };
-		F5E974381B33DF0A00829C60 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E974341B33DF0A00829C60 /* orange.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +205,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5014BB71B390B4E004F5262 /* BStateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BStateDelegate.swift; sourceTree = "<group>"; };
+		F5014BBC1B390F4E004F5262 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F5014BBE1B3915F2004F5262 /* BJabberMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJabberMessage.swift; sourceTree = "<group>"; };
 		F52132621B329C260085A4FA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F52132641B32A6140085A4FA /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		F52132661B32A7E50085A4FA /* BMessageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMessageDelegate.swift; sourceTree = "<group>"; };
@@ -503,13 +525,29 @@
 		F53DC1EB1B315AC500800300 /* NSXMLElement+XEP_0335.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+XEP_0335.h"; sourceTree = "<group>"; };
 		F53DC1EC1B315AC500800300 /* NSXMLElement+XEP_0335.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+XEP_0335.m"; sourceTree = "<group>"; };
 		F53DC2501B315C7D00800300 /* XMPPFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
+		F5D1EAAA1B3BA3620043EC18 /* MessageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCell.swift; sourceTree = "<group>"; };
+		F5D1EAAC1B3BA9610043EC18 /* MessageTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableCell.xib; sourceTree = "<group>"; };
+		F5D1EAB51B3BAC310043EC18 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		F5D1EAB61B3BAC310043EC18 /* photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo@2x.png"; sourceTree = "<group>"; };
+		F5D1EAB71B3BAC310043EC18 /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
+		F5D1EAB81B3BAC310043EC18 /* photo1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo1@2x.png"; sourceTree = "<group>"; };
+		F5D1EAB91B3BAC310043EC18 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		F5D1EABF1B3BAC530043EC18 /* SenderAppNodeBkg_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SenderAppNodeBkg_HL.png; sourceTree = "<group>"; };
+		F5D1EAC01B3BAC530043EC18 /* SenderAppNodeBkg_HL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderAppNodeBkg_HL@2x.png"; sourceTree = "<group>"; };
+		F5D1EAC11B3BAC530043EC18 /* SenderVoiceNodeDownloading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SenderVoiceNodeDownloading.png; sourceTree = "<group>"; };
+		F5D1EAC21B3BAC530043EC18 /* SenderVoiceNodeDownloading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderVoiceNodeDownloading@2x.png"; sourceTree = "<group>"; };
+		F5D1EAC31B3BAC530043EC18 /* SenderVoiceNodePlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SenderVoiceNodePlaying.png; sourceTree = "<group>"; };
+		F5D1EAC41B3BAC530043EC18 /* SenderVoiceNodePlaying@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderVoiceNodePlaying@2x.png"; sourceTree = "<group>"; };
+		F5D1EACB1B3BAC670043EC18 /* ReceiverTextNodeBkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReceiverTextNodeBkg.png; sourceTree = "<group>"; };
+		F5D1EACC1B3BAC670043EC18 /* ReceiverTextNodeBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReceiverTextNodeBkg@2x.png"; sourceTree = "<group>"; };
+		F5D1EACD1B3BAC670043EC18 /* ReceiverVoiceNodeDownloading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReceiverVoiceNodeDownloading.png; sourceTree = "<group>"; };
+		F5D1EACE1B3BAC670043EC18 /* ReceiverVoiceNodeDownloading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReceiverVoiceNodeDownloading@2x.png"; sourceTree = "<group>"; };
+		F5D1EACF1B3BAC670043EC18 /* ReceiverVoiceNodePlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReceiverVoiceNodePlaying.png; sourceTree = "<group>"; };
+		F5D1EAD01B3BAC670043EC18 /* ReceiverVoiceNodePlaying@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReceiverVoiceNodePlaying@2x.png"; sourceTree = "<group>"; };
+		F5D1EAD71B3BDCC40043EC18 /* BViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewHelper.swift; sourceTree = "<group>"; };
 		F5E9742A1B33C07D00829C60 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F5E9742C1B33C08F00829C60 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		F5E9742E1B33DAF300829C60 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
-		F5E974311B33DF0A00829C60 /* BlueBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBubble2.png; sourceTree = "<group>"; };
-		F5E974321B33DF0A00829C60 /* GreenBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBubble2.png; sourceTree = "<group>"; };
-		F5E974331B33DF0A00829C60 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
-		F5E974341B33DF0A00829C60 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +573,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5014BB91B390D33004F5262 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5014BBC1B390F4E004F5262 /* Constant.swift */,
+				F5014BBE1B3915F2004F5262 /* BJabberMessage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F52132601B329BE30085A4FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +605,7 @@
 			children = (
 				F52132661B32A7E50085A4FA /* BMessageDelegate.swift */,
 				F521326B1B32A9E50085A4FA /* BChatDelegate.swift */,
+				F5014BB71B390B4E004F5262 /* BStateDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -594,6 +642,7 @@
 				F52132611B329C040085A4FA /* Storyboard */,
 				F53DC0E81B3158C200800300 /* XMPPFramework */,
 				F53DC0E91B31597D00800300 /* Helpers */,
+				F5014BB91B390D33004F5262 /* Models */,
 				F52132601B329BE30085A4FA /* Views */,
 				F53DC01A1B3154F600800300 /* Supporting Files */,
 				F53DC03D1B31555F00800300 /* BChat-Bridging-Header.h */,
@@ -905,6 +954,7 @@
 				F52132641B32A6140085A4FA /* DateUtils.swift */,
 				F5E9742E1B33DAF300829C60 /* StringUtils.swift */,
 				F52132711B32C1BE0085A4FA /* BXMPPServer.swift */,
+				F5D1EAD71B3BDCC40043EC18 /* BViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1525,11 +1575,51 @@
 			path = "XEP-0335";
 			sourceTree = "<group>";
 		};
+		F5D1EAB21B3BAC1E0043EC18 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				F5D1EAB51B3BAC310043EC18 /* photo.png */,
+				F5D1EAB61B3BAC310043EC18 /* photo@2x.png */,
+				F5D1EAB71B3BAC310043EC18 /* photo1.png */,
+				F5D1EAB81B3BAC310043EC18 /* photo1@2x.png */,
+				F5D1EAB91B3BAC310043EC18 /* image.png */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		F5D1EAB31B3BAC1E0043EC18 /* receiver */ = {
+			isa = PBXGroup;
+			children = (
+				F5D1EACB1B3BAC670043EC18 /* ReceiverTextNodeBkg.png */,
+				F5D1EACC1B3BAC670043EC18 /* ReceiverTextNodeBkg@2x.png */,
+				F5D1EACD1B3BAC670043EC18 /* ReceiverVoiceNodeDownloading.png */,
+				F5D1EACE1B3BAC670043EC18 /* ReceiverVoiceNodeDownloading@2x.png */,
+				F5D1EACF1B3BAC670043EC18 /* ReceiverVoiceNodePlaying.png */,
+				F5D1EAD01B3BAC670043EC18 /* ReceiverVoiceNodePlaying@2x.png */,
+			);
+			path = receiver;
+			sourceTree = "<group>";
+		};
+		F5D1EAB41B3BAC1E0043EC18 /* sender */ = {
+			isa = PBXGroup;
+			children = (
+				F5D1EABF1B3BAC530043EC18 /* SenderAppNodeBkg_HL.png */,
+				F5D1EAC01B3BAC530043EC18 /* SenderAppNodeBkg_HL@2x.png */,
+				F5D1EAC11B3BAC530043EC18 /* SenderVoiceNodeDownloading.png */,
+				F5D1EAC21B3BAC530043EC18 /* SenderVoiceNodeDownloading@2x.png */,
+				F5D1EAC31B3BAC530043EC18 /* SenderVoiceNodePlaying.png */,
+				F5D1EAC41B3BAC530043EC18 /* SenderVoiceNodePlaying@2x.png */,
+			);
+			path = sender;
+			sourceTree = "<group>";
+		};
 		F5E974291B33A9E000829C60 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				F5E9742C1B33C08F00829C60 /* MessageTableViewCell.swift */,
 				F5E9742A1B33C07D00829C60 /* BaseViewController.swift */,
+				F5D1EAAA1B3BA3620043EC18 /* MessageTableCell.swift */,
+				F5D1EAAC1B3BA9610043EC18 /* MessageTableCell.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -1537,10 +1627,9 @@
 		F5E974301B33DEF400829C60 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				F5E974311B33DF0A00829C60 /* BlueBubble2.png */,
-				F5E974321B33DF0A00829C60 /* GreenBubble2.png */,
-				F5E974331B33DF0A00829C60 /* aqua.png */,
-				F5E974341B33DF0A00829C60 /* orange.png */,
+				F5D1EAB21B3BAC1E0043EC18 /* other */,
+				F5D1EAB31B3BAC1E0043EC18 /* receiver */,
+				F5D1EAB41B3BAC1E0043EC18 /* sender */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1625,15 +1714,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E974351B33DF0A00829C60 /* BlueBubble2.png in Resources */,
+				F5D1EABC1B3BAC310043EC18 /* photo1.png in Resources */,
 				F53DC07E1B31567800800300 /* build-libidn.sh in Resources */,
+				F5D1EACA1B3BAC530043EC18 /* SenderVoiceNodePlaying@2x.png in Resources */,
+				F5D1EABA1B3BAC310043EC18 /* photo.png in Resources */,
+				F5D1EAC81B3BAC530043EC18 /* SenderVoiceNodeDownloading@2x.png in Resources */,
 				F53DC0221B3154F600800300 /* Main.storyboard in Resources */,
-				F5E974371B33DF0A00829C60 /* aqua.png in Resources */,
-				F5E974361B33DF0A00829C60 /* GreenBubble2.png in Resources */,
+				F5D1EABD1B3BAC310043EC18 /* photo1@2x.png in Resources */,
+				F5D1EAC71B3BAC530043EC18 /* SenderVoiceNodeDownloading.png in Resources */,
+				F5D1EAC91B3BAC530043EC18 /* SenderVoiceNodePlaying.png in Resources */,
+				F5D1EAD51B3BAC670043EC18 /* ReceiverVoiceNodePlaying.png in Resources */,
 				F53DC0271B3154F600800300 /* LaunchScreen.xib in Resources */,
+				F5D1EABE1B3BAC310043EC18 /* image.png in Resources */,
 				F53DC0791B31567800800300 /* README.txt in Resources */,
 				F53DC0241B3154F600800300 /* Images.xcassets in Resources */,
-				F5E974381B33DF0A00829C60 /* orange.png in Resources */,
+				F5D1EAC61B3BAC530043EC18 /* SenderAppNodeBkg_HL@2x.png in Resources */,
+				F5D1EAD61B3BAC670043EC18 /* ReceiverVoiceNodePlaying@2x.png in Resources */,
+				F5D1EAAD1B3BA9610043EC18 /* MessageTableCell.xib in Resources */,
+				F5D1EAC51B3BAC530043EC18 /* SenderAppNodeBkg_HL.png in Resources */,
+				F5D1EAD11B3BAC670043EC18 /* ReceiverTextNodeBkg.png in Resources */,
+				F5D1EAD21B3BAC670043EC18 /* ReceiverTextNodeBkg@2x.png in Resources */,
+				F5D1EAD41B3BAC670043EC18 /* ReceiverVoiceNodeDownloading@2x.png in Resources */,
+				F5D1EAD31B3BAC670043EC18 /* ReceiverVoiceNodeDownloading.png in Resources */,
+				F5D1EABB1B3BAC310043EC18 /* photo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1670,6 +1773,7 @@
 				F53DC2231B315AC500800300 /* XMPPPubSub.m in Sources */,
 				F53DC1EE1B315AC500800300 /* XMPPCoreDataStorage.m in Sources */,
 				F53DC1ED1B315AC500800300 /* XMPPBandwidthMonitor.m in Sources */,
+				F5014BBD1B390F4E004F5262 /* Constant.swift in Sources */,
 				F52132671B32A7E50085A4FA /* BMessageDelegate.swift in Sources */,
 				F53DC22A1B315AC500800300 /* XMPPMessage+XEP_0085.m in Sources */,
 				F52132631B329C260085A4FA /* LoginViewController.swift in Sources */,
@@ -1696,6 +1800,7 @@
 				F53DC21C1B315AC500800300 /* XMPPvCardTempEmail.m in Sources */,
 				F53DC2251B315AC500800300 /* XMPPIQ+XEP_0066.m in Sources */,
 				F53DC1FA1B315AC500800300 /* XMPPResourceMemoryStorageObject.m in Sources */,
+				F5014BBF1B3915F2004F5262 /* BJabberMessage.swift in Sources */,
 				F53DC1F11B315AC500800300 /* XMPPOutgoingFileTransfer.m in Sources */,
 				F53DC2071B315AC500800300 /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
 				F53DC0761B31567800800300 /* DDContextFilterLogFormatter.m in Sources */,
@@ -1728,6 +1833,7 @@
 				F53DC20F1B315AC500800300 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				F53DC21A1B315AC500800300 /* XMPPvCardTempAdrTypes.m in Sources */,
 				F53DC1F71B315AC500800300 /* XMPPRoster.xcdatamodel in Sources */,
+				F5014BB81B390B4E004F5262 /* BStateDelegate.swift in Sources */,
 				F53DC0DB1B3157AC00800300 /* XMPPModule.m in Sources */,
 				F53DC0CF1B3157AC00800300 /* XMPPPlainAuthentication.m in Sources */,
 				F53DC24E1B315AC500800300 /* XMPPMessage+XEP_0333.m in Sources */,
@@ -1745,6 +1851,7 @@
 				F53DC20A1B315AC500800300 /* XMPPRoomHybridStorage.m in Sources */,
 				F53DC20B1B315AC500800300 /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				F53DC0711B31567800800300 /* DDAbstractDatabaseLogger.m in Sources */,
+				F5D1EAAB1B3BA3620043EC18 /* MessageTableCell.swift in Sources */,
 				F53DC2051B315AC500800300 /* XMPPRoom.xcdatamodeld in Sources */,
 				F53DC0E51B3157AC00800300 /* XMPPTimer.m in Sources */,
 				F5E9742B1B33C07D00829C60 /* BaseViewController.swift in Sources */,
@@ -1792,6 +1899,7 @@
 				F53DC24F1B315AC500800300 /* NSXMLElement+XEP_0335.m in Sources */,
 				F53DC0D11B3157AC00800300 /* XMPPXFacebookPlatformAuthentication.m in Sources */,
 				F53DC0721B31567800800300 /* DDASLLogger.m in Sources */,
+				F5D1EAD81B3BDCC40043EC18 /* BViewHelper.swift in Sources */,
 				F53DC0DE1B3157AC00800300 /* XMPPStream.m in Sources */,
 				F53DC22B1B315AC500800300 /* XMPPSoftwareVersion.m in Sources */,
 				F53DC23B1B315AC500800300 /* XMPPPresence+XEP_0172.m in Sources */,

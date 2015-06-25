@@ -18,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
     private var mPassword: String?
     private var mIsOpen: Bool?
     
-    internal var xmppStream: XMPPStream!
-    internal var messageDelegate: BMessageDelegate?
-    internal var chatDelegate: BChatDelegate?
+    var xmppStream: XMPPStream!
+    // 消息代理
+    var messageDelegate: BMessageDelegate?
+    // 聊天代理
+    var chatDelegate: BChatDelegate?
+    // 状态代理
+    var stateDelegate: BStateDelegate?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -66,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
     
     // 发送下线状态
     func goOffline() {
-        var presence = XMPPPresence(type: "unavailable")
+        var presence = XMPPPresence(type: Constant.msgUnavailable)
         xmppStream.sendElement(presence)
     }
     
@@ -75,9 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
         
         // 从本地获取
         var defaults = NSUserDefaults.standardUserDefaults()
-        var userId = defaults.stringForKey("userId")
-        var pass = defaults.stringForKey("pass")
-        var server = defaults.stringForKey("server")
+        var userId = defaults.stringForKey(Constant.udUserId)
+        var pass = defaults.stringForKey(Constant.udPass)
+        var server = defaults.stringForKey(Constant.udServer)
         
         if !xmppStream.isDisconnected() {
             return true
@@ -104,47 +108,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
         return true
     }
     
+    /**
+    *  断开连接
+    */
     func disconnect() {
-        self.goOffline()
-        xmppStream.disconnect()
-    }
-    
-    // 连接服务器
-    func xmppStreamDidConnect(sender: XMPPStream!) {
-        mIsOpen = true
-        var error: NSError?
-        // 验证密码
-        xmppStream.authenticateWithPassword(mPassword, error: &error)
-    }
-    
-    // 验证通过
-    func xmppStreamDidAuthenticate(sender: XMPPStream!) {
-        self.goOnline()
+        if ( xmppStream.isConnected() ) {
+            self.goOffline()
+            xmppStream.disconnect()
+        }
     }
     
     /**
-    *  收到消息
+    *  收到好友消息
     */
     func xmppStream(sender: XMPPStream!, didReceiveMessage message: XMPPMessage!) {
-        // 发送人
-        var from = message.attributeStringValueForName("from")
-        // 正在输入
-        var composingEle = message.elementForName("composing")
-        // 停止输入
-        var pausedEle = message.elementForName("paused")
-        // 消息内容
-        var bodyEle = message.elementForName("body")
-        
-        if bodyEle != nil{
-            var msg = bodyEle.stringValue()
-            
-            var dict = NSMutableDictionary()
-            dict.setObject(msg, forKey: "msg")
-            dict.setObject(from, forKey: "sender")
-            // 消息接收到的时间
-            dict.setObject(DateUtils.getCurrentTime(), forKey: "time")
+        // 聊天消息
+        if ( message.isChatMessage() ) {
+            var msg = BJabberMessage(message: message)
             // 消息委托
-            messageDelegate?.newMessageReceived(dict)
+            messageDelegate?.newMessageReceived(msg)
         }
     }
     
@@ -152,22 +134,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
     *  收到好友状态
     */
     func xmppStream(sender: XMPPStream!, didReceivePresence presence: XMPPPresence!) {
-        // 取得好友状态: online/offline
-        var presenceType: NSString = presence.type()
-        // 当前用户
-        var userId = sender.myJID.user
-        // 在线用户
-        var presenceFromUser: NSString = presence.from().user
-        
-        if !presenceFromUser.isEqualToString(userId) {
-            // 在线状态
-            if presenceType.isEqualToString("available") {
-                // 用户列表委托
-                chatDelegate?.newBuddyOnline("\(presenceFromUser)@\(kServer)")
-            } else if (presenceType.isEqualToString("unavailable")) {
-                chatDelegate?.buddyWentOffline("\(presenceFromUser)@\(kServer)")
+        // 当前用户ID
+        let me = sender.myJID.user
+        // 好友ID
+        let user = presence.from().user
+        // 用户所在的域
+        let domain = presence.from().domain
+        // 状态类型
+        let pType = presence.type()
+        // 如果状态不是自己的
+        if ( user != me ) {
+            var state = BUserState()
+            state.userId = "\(user)@\(domain)"
+            // 上线
+            if ( pType == Constant.msgAvailable ) {
+                state.isOn = true
+                stateDelegate?.isOn(state)
+            }
+            // 下线
+            else if ( pType == Constant.msgUnavailable ) {
+                state.isOn = false
+                stateDelegate?.isOff(state)
             }
         }
+    }
+    
+    /**
+    *  连接服务器
+    */
+    func xmppStreamDidConnect(sender: XMPPStream!) {
+        mIsOpen = true
+        var error: NSError?
+        // 验证密码
+        xmppStream.authenticateWithPassword(mPassword, error: &error)
+    }
+    
+    /**
+    *  验证通过
+    */
+    func xmppStreamDidAuthenticate(sender: XMPPStream!) {
+        self.goOnline()
     }
     
 }

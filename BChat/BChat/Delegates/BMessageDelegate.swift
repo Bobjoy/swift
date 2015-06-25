@@ -10,6 +10,6 @@ import UIKit
 
 protocol BMessageDelegate{
     
-    func newMessageReceived(messageContent: NSDictionary)
+    func newMessageReceived(message: BJabberMessage)
    
 }

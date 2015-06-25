@@ -8,65 +8,74 @@
 
 import UIKit
 
-class MainViewController: BaseViewController, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate, BChatDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BStateDelegate, BMessageDelegate {
 
     @IBOutlet var tbView: UITableView!
+    @IBOutlet weak var online: UISwitch!
     
-    private var mOnlineUsers: NSMutableArray!
     private var mChatUserName: String!
     private var mXmppStream: XMPPStream?
+    
+    private var mUnreadMessages: [BJabberMessage]!
+    private var mUserStates: [BUserState]!
+    
+    var isLogined = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 初始化数组
-        mOnlineUsers = NSMutableArray()
+        mUnreadMessages = [BJabberMessage]()
+        mUserStates = [BUserState]()
+        
         // UITableView的数据源和代理
         tbView.delegate = self
         tbView.dataSource = self
-        // 设定在线用户委托
-        var delegate: AppDelegate = self.appDelegate()
-        delegate.chatDelegate = self
-        // 设置标题栏
-        var loginBar = UIBarButtonItem(title: "登录  ", style: .Done, target: self, action: "account")
-        self.initNavBar("好友列表", left: nil, right: loginBar)
         
+        // 状态代理
+        appDelegate().stateDelegate = self
+        
+        // 判断登录
+        var myID = NSUserDefaults.standardUserDefaults().objectForKey(Constant.udUserId) as? String
+        if ( myID != nil ) {
+            self.logon()
+        } else {
+            self.login()
+        }
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        var login = NSUserDefaults.standardUserDefaults().objectForKey("userId") as? String
-        if login != nil {
-            if self.appDelegate().connect() {
-                NSLog("show buddy list")
-            }
+        appDelegate().messageDelegate = self
+    }
+    
+    @IBAction func switchState(sender: AnyObject) {
+        if ( isLogined ) {
+            // 下线
+            logoff()
         } else {
-            var alert = UIAlertView(title: "提示", message: "您还没有设置账号", delegate: self, cancelButtonTitle: "设置")
-            alert.show()
+            // 上线
+            logon()
         }
     }
     
-    // MARK: - UIAlertViewDelegate
-    
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 0 {
-            self.account()
-        }
-    }
-    
-    @IBAction func account() {
+    @IBAction func login() {
         self.performSegueWithIdentifier("login", sender: self)
     }
 
     // MARK: - UITableViewDataSource
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mOnlineUsers.count
+        return mUserStates.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,57 +84,94 @@ class MainViewController: BaseViewController, UIAlertViewDelegate, UITableViewDa
         if cell == NSNull() {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellid)
         }
-        cell.textLabel?.text = mOnlineUsers.objectAtIndex(indexPath.row) as? String
+        
+        let state = mUserStates[indexPath.row]
+        var unreadNum = 0
+        for msg in mUnreadMessages {
+            if (state.userId == msg.fromUserId) {
+                unreadNum++
+            }
+        }
+        
+        cell.textLabel?.text = state.userId + "(\(unreadNum))"
+        cell.detailTextLabel?.text = state.isOn ? "在线" : "离线"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        
         return cell
     }
-
+    
     // MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        mChatUserName = mOnlineUsers.objectAtIndex(indexPath.row) as! String
+        mChatUserName = mUserStates[indexPath.row].userId
         self.performSegueWithIdentifier("chat", sender: self)
     }
     
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier! as NSString).isEqualToString("chat") {
+        if ( segue.identifier == "chat" ) {
             var chatView = segue.destinationViewController as! ChatViewController
             chatView.chatWithUser = mChatUserName
-        }
-    }
-    
-    //MARK: - BChatDegate
-    
-    /**
-    在线好友
-    
-    :param: buddyName
-    */
-    func newBuddyOnline(buddyName: String) {
-        println("在线好友：\(buddyName)")
-        if !mOnlineUsers.containsObject(buddyName) {
-            mOnlineUsers.addObject(buddyName)
+            for msg in mUnreadMessages {
+                if ( msg.fromUserId == mChatUserName ) {
+                    chatView.messages.append(msg)
+                }
+            }
+            // 移除
+            mUnreadMessages = mUnreadMessages.filter{ $0.fromUserId != self.mChatUserName}
             self.tbView.reloadData()
         }
     }
     
-    /**
-    好友下线
+    @IBAction func unwindToBList(segue: UIStoryboardSegue) {
+        //如果是登陆界面的完成按钮点击了, 开始登陆
+        let srcView = segue.sourceViewController as? LoginViewController
+        if let loginView = srcView {
+            if ( loginView.requireLogin ) {
+                //注销前一个用户
+                self.logoff()
+                //登陆现用户
+                self.logon()
+            }
+        }
+    }
     
-    :param: buddyName
-    */
-    func buddyWentOffline(buddyName: String) {
-        println("离线好友：\(buddyName)")
-        
-        mOnlineUsers.removeObject(buddyName)
+    //MARK: - BStateDelegate
+    
+    func isOn(state: BUserState) {
+        for (index, oldState) in enumerate(mUserStates) {
+            if ( state.userId == oldState.userId ) {
+                // 移除旧的状态
+                mUserStates.removeAtIndex(index)
+                break
+            }
+        }
+        // 添加新的状态
+        mUserStates.append(state)
+        // 刷新表格
         self.tbView.reloadData()
     }
     
-    func didDisconnect() {
-        println("失去连接")
-    }
+    func isOff(state: BUserState) {
+        for (index, oldState) in enumerate(mUserStates) {
+            if ( state.userId == oldState.userId ) {
+                mUserStates[index].isOn = false
+            }
+        }
+        // 刷新表格
+        self.tbView.reloadData()
+    } // BStateDelegate End
+    
+    //MARK: - BMessageDelegate
+    
+    func newMessageReceived(message: BJabberMessage) {
+        if ( !message.body.isEmpty ) {
+            println("消息：" + message.body)
+            mUnreadMessages.append(message)
+            self.tbView.reloadData()
+        }
+    } // BMessageDelegate End
     
     /**
     *  取得当前程序的委托
@@ -143,5 +189,31 @@ class MainViewController: BaseViewController, UIAlertViewDelegate, UITableViewDa
         return self.appDelegate().xmppStream
     }
     
-
+    func logon() {
+        // 清空未读和状态数组
+        mUnreadMessages.removeAll(keepCapacity: false)
+        mUserStates.removeAll(keepCapacity: false)
+        self.appDelegate().connect()
+        self.online.on = true
+        isLogined = true
+        
+        // 取用户名
+        let myID = NSUserDefaults.standardUserDefaults().stringForKey(Constant.udUserId)
+        self.navigationItem.title = "\(myID!)的好友"
+        // 刷新表格
+        self.tbView.reloadData()
+    }
+    
+    func logoff() {
+        // 清空未读和状态数组
+        mUnreadMessages.removeAll(keepCapacity: false)
+        mUserStates.removeAll(keepCapacity: false)
+        
+        appDelegate().disconnect()
+        
+        isLogined = false
+        // 刷新表格
+        self.tbView.reloadData()
+    }
+    
 }
